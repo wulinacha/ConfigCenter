@@ -1,0 +1,26 @@
+{
+  "log": {
+    "queue": "Quotation_system_log",
+    "connection": "activemq:failover:(tcp://192.168.199.26:61616)?randomize=false",
+    "user": "",
+    "password": ""
+  },
+  "operationLog": {
+    "queue": "Quotation_operation_log",
+    "connection": "activemq:failover:(tcp://192.168.199.26:61616)?randomize=false",
+    "user": "",
+    "password": ""
+  },
+  "SyncPayment": {
+    "queue": "PAYMENT_NOTIFY_TO_B2B_ORDER",
+    "connection": "activemq:failover:(tcp://192.168.100.2:61616)?randomize=false",
+    "user": "",
+    "password": ""
+  },
+  "QuotePriceEditPost": {
+    "queue": "Quote_PriceEditPost",
+    "connection": "activemq:failover:(tcp://192.168.199.26:61616)?randomize=false",
+    "user": "",
+    "password": ""
+  }
+}

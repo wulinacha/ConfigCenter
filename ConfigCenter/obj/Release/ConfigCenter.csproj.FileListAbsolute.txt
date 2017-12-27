@@ -1,0 +1,13 @@
+D:\安装包\ConfigCenter-master\ConfigCenter\ConfigCenter\bin\Release\ConfigCenter.dll
+D:\安装包\ConfigCenter-master\ConfigCenter\ConfigCenter\bin\Release\ConfigCenter.pdb
+D:\安装包\ConfigCenter-master\ConfigCenter\ConfigCenter\bin\Release\ConfigCenter.Dto.dll
+D:\安装包\ConfigCenter-master\ConfigCenter\ConfigCenter\bin\Release\ServiceStack.Client.dll
+D:\安装包\ConfigCenter-master\ConfigCenter\ConfigCenter\bin\Release\ServiceStack.Interfaces.dll
+D:\安装包\ConfigCenter-master\ConfigCenter\ConfigCenter\bin\Release\ServiceStack.Text.dll
+D:\安装包\ConfigCenter-master\ConfigCenter\ConfigCenter\bin\Release\ConfigCenter.Dto.pdb
+D:\安装包\ConfigCenter-master\ConfigCenter\ConfigCenter\bin\Release\ServiceStack.Client.xml
+D:\安装包\ConfigCenter-master\ConfigCenter\ConfigCenter\bin\Release\ServiceStack.Text.xml
+D:\安装包\ConfigCenter-master\ConfigCenter\ConfigCenter\obj\Release\ConfigCenter.csprojResolveAssemblyReference.cache
+D:\安装包\ConfigCenter-master\ConfigCenter\ConfigCenter\obj\Release\ConfigCenter.csproj.CoreCompileInputs.cache
+D:\安装包\ConfigCenter-master\ConfigCenter\ConfigCenter\obj\Release\ConfigCenter.dll
+D:\安装包\ConfigCenter-master\ConfigCenter\ConfigCenter\obj\Release\ConfigCenter.pdb
