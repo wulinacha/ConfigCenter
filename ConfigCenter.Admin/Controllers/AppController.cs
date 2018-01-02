@@ -21,12 +21,22 @@ namespace ConfigCenter.Admin.Controllers
         public ActionResult Index(int pageindex = 1, string kword = "")
         {
             long totalItem;
-            if (Session["roleName"].ToString() != RoleEnum.管理员.ToString())//非管理员不提供搜索
-                kword = Session["name"].ToString();
+            string sarchKword;
+
+            sarchKword = GetProjectNameIfAdminOrSpeac(kword);
+
             ViewData["roleName"] = Session["roleName"];
 
-            var dto = AppBusiness.GetApps(pageindex, 20, kword, out totalItem);
+            var dto = AppBusiness.GetApps(pageindex, 20, sarchKword, out totalItem);
+
             return View(new PagedList<AppDto>(dto, pageindex, 20, (int)totalItem));
+        }
+
+        private string GetProjectNameIfAdminOrSpeac(string kword)
+        {
+            if (Session["roleName"].ToString() != RoleEnum.管理员.ToString())//非管理员不提供搜索
+                kword = Session["name"].ToString();
+            return kword;
         }
 
         /// <summary>
