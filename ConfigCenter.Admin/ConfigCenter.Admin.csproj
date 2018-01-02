@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Script\jquery-1.7.1.intellisense.js" />
     <Content Include="Script\jquery-1.7.1.js" />
@@ -129,7 +130,9 @@
     <Content Include="Static\My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
     <Content Include="Static\My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
     <Content Include="Static\My97DatePicker\开发包\skin\whyGreen\img.gif" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\BaseController.cs" />

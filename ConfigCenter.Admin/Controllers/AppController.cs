@@ -13,7 +13,7 @@ using ConfigCenter.Admin.Common;
 using ConfigCenter.Admin;
 using static ConfigCenter.Dto.ResultEnum;
 
-namespace ConfigCenter.Admin.Controllers
+namespace ConfigCenter.Admin.Controllers    
 {
     public class AppController : BaseController 
     {
