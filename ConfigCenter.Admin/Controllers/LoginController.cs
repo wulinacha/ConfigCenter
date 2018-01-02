@@ -65,7 +65,6 @@ namespace ConfigCenter.Admin.Controllers
 
         private ActionResult GoToDefualt()
         {
-            string namelogin = Session["name"].ToString();
             return Redirect("/App/Index");
         }
     }
