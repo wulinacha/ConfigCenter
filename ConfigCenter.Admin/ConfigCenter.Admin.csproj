@@ -120,17 +120,6 @@
     <Content Include="Static\My97DatePicker\skin\whyGreen\datepicker.css" />
     <Content Include="Static\My97DatePicker\skin\whyGreen\img.gif" />
     <Content Include="Static\My97DatePicker\WdatePicker.js" />
-    <Content Include="Static\My97DatePicker\开发包\lang\en.js" />
-    <Content Include="Static\My97DatePicker\开发包\lang\zh-cn.js" />
-    <Content Include="Static\My97DatePicker\开发包\lang\zh-tw.js" />
-    <Content Include="Static\My97DatePicker\开发包\readme.txt" />
-    <Content Include="Static\My97DatePicker\开发包\skin\datePicker.gif" />
-    <Content Include="Static\My97DatePicker\开发包\skin\default\datepicker.css" />
-    <Content Include="Static\My97DatePicker\开发包\skin\default\img.gif" />
-    <Content Include="Static\My97DatePicker\开发包\skin\WdatePicker.css" />
-    <Content Include="Static\My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
-    <Content Include="Static\My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
-    <Content Include="Static\My97DatePicker\开发包\skin\whyGreen\img.gif" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
