@@ -6,6 +6,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcZSNbBProEqoi+vp6gneTwAAAAACAAAAAAAQZgAAAAEAACAAAAAbTh1Lizxo2oAi7wiYXNCtFBwhQKeOEwMUS/KLPNij2AAAAAAOgAAAAAIAACAAAABNBiOFyyB2iobpqP1cuo0CbvPx6ngdk+n+ms2EsHs0XSAAAADi0fQ+Foqw9d0jwxm3PaP963UYnms/so8r8KHQNSX9JUAAAADB+SEJYGoIRvWZceegDdTgPhaaspkvhMo5nWp73yrhqErzSdw7zEhWkhL4KALf2wuffIEE3zTs7Le6RP1VRUVL</EncryptedPassword>
+    <_PublishTargetUrl>ftp://192.168.199.15/D:\webs\ConfigCenter.Admin-Jenkins</_PublishTargetUrl>
   </PropertyGroup>
 </Project>
