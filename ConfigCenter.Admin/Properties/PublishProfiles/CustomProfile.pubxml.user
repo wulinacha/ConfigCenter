@@ -7,6 +7,272 @@
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcZSNbBProEqoi+vp6gneTwAAAAACAAAAAAAQZgAAAAEAACAAAAAbTh1Lizxo2oAi7wiYXNCtFBwhQKeOEwMUS/KLPNij2AAAAAAOgAAAAAIAACAAAABNBiOFyyB2iobpqP1cuo0CbvPx6ngdk+n+ms2EsHs0XSAAAADi0fQ+Foqw9d0jwxm3PaP963UYnms/so8r8KHQNSX9JUAAAADB+SEJYGoIRvWZceegDdTgPhaaspkvhMo5nWp73yrhqErzSdw7zEhWkhL4KALf2wuffIEE3zTs7Le6RP1VRUVL</EncryptedPassword>
-    <_PublishTargetUrl>ftp://192.168.199.15/D:\webs\ConfigCenter.Admin-Jenkins</_PublishTargetUrl>
+    <_PublishTargetUrl>ftp://192.168.199.15:21/ConfigCenter</_PublishTargetUrl>
   </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>01/03/2018 11:43:42</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>01/03/2018 11:43:42</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.dll">
+      <publishTime>12/01/2017 14:09:33</publishTime>
+    </File>
+    <File Include="bin/ConfigCenter.Admin.dll">
+      <publishTime>01/03/2018 10:28:33</publishTime>
+    </File>
+    <File Include="bin/ConfigCenter.Admin.pdb">
+      <publishTime>01/03/2018 10:28:33</publishTime>
+    </File>
+    <File Include="bin/ConfigCenter.Business.dll">
+      <publishTime>01/02/2018 18:35:20</publishTime>
+    </File>
+    <File Include="bin/ConfigCenter.Business.pdb">
+      <publishTime>01/02/2018 18:35:20</publishTime>
+    </File>
+    <File Include="bin/ConfigCenter.Common.dll">
+      <publishTime>01/02/2018 18:35:20</publishTime>
+    </File>
+    <File Include="bin/ConfigCenter.Common.pdb">
+      <publishTime>01/02/2018 18:35:20</publishTime>
+    </File>
+    <File Include="bin/ConfigCenter.Dto.dll">
+      <publishTime>01/02/2018 18:35:20</publishTime>
+    </File>
+    <File Include="bin/ConfigCenter.Dto.pdb">
+      <publishTime>01/02/2018 18:35:20</publishTime>
+    </File>
+    <File Include="bin/ConfigCenter.Repository.dll">
+      <publishTime>01/02/2018 18:35:20</publishTime>
+    </File>
+    <File Include="bin/ConfigCenter.Repository.dll.config">
+      <publishTime>12/25/2017 16:45:05</publishTime>
+    </File>
+    <File Include="bin/ConfigCenter.Repository.pdb">
+      <publishTime>01/02/2018 18:35:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>12/01/2017 14:09:10</publishTime>
+    </File>
+    <File Include="bin/ServiceStack.Interfaces.dll">
+      <publishTime>12/01/2017 14:09:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>12/01/2017 14:09:33</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>12/01/2017 14:09:33</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>12/01/2017 14:09:33</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>12/01/2017 14:09:33</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>12/01/2017 14:09:33</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>12/01/2017 14:09:33</publishTime>
+    </File>
+    <File Include="bin/Webdiyer.MvcPager.dll">
+      <publishTime>12/01/2017 14:09:14</publishTime>
+    </File>
+    <File Include="bin/zh-CHS/Webdiyer.MvcPager.resources.dll">
+      <publishTime>12/01/2017 14:09:14</publishTime>
+    </File>
+    <File Include="bin/zh-CHT/Webdiyer.MvcPager.resources.dll">
+      <publishTime>12/01/2017 14:09:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
+      <publishTime>12/01/2017 14:09:33</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Mvc.resources.dll">
+      <publishTime>12/01/2017 14:09:33</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>12/01/2017 14:09:33</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>12/01/2017 14:09:33</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>12/01/2017 14:09:33</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
+      <publishTime>12/01/2017 14:09:33</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>12/25/2017 15:48:48</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>01/03/2018 11:43:40</publishTime>
+    </File>
+    <File Include="Script/jquery-1.7.1.js">
+      <publishTime>12/01/2017 14:09:53</publishTime>
+    </File>
+    <File Include="Script/jquery-1.7.1.min.js">
+      <publishTime>12/01/2017 14:09:53</publishTime>
+    </File>
+    <File Include="Static/css/bootstrap-theme.css">
+      <publishTime>12/01/2017 14:09:51</publishTime>
+    </File>
+    <File Include="Static/css/bootstrap-theme.min.css">
+      <publishTime>12/01/2017 14:09:52</publishTime>
+    </File>
+    <File Include="Static/css/bootstrap.css">
+      <publishTime>12/01/2017 14:09:52</publishTime>
+    </File>
+    <File Include="Static/css/bootstrap.min.css">
+      <publishTime>12/01/2017 14:09:52</publishTime>
+    </File>
+    <File Include="Static/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>12/01/2017 14:09:50</publishTime>
+    </File>
+    <File Include="Static/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>12/01/2017 14:09:50</publishTime>
+    </File>
+    <File Include="Static/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>12/01/2017 14:09:51</publishTime>
+    </File>
+    <File Include="Static/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>12/01/2017 14:09:51</publishTime>
+    </File>
+    <File Include="Static/js/asset/js/esl/css.js">
+      <publishTime>12/01/2017 14:09:49</publishTime>
+    </File>
+    <File Include="Static/js/asset/js/esl/echarts.js">
+      <publishTime>12/01/2017 14:09:49</publishTime>
+    </File>
+    <File Include="Static/js/asset/js/esl/esl.js">
+      <publishTime>12/01/2017 14:09:50</publishTime>
+    </File>
+    <File Include="Static/js/asset/js/esl/js.js">
+      <publishTime>12/01/2017 14:09:50</publishTime>
+    </File>
+    <File Include="Static/js/bootstrap-pagy.js">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/js/bootstrap.js">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/js/bootstrap.min.js">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/js/jquery.1.9.1.min.js">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/js/jquery.tmpl.js">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/calendar.js">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/config.js">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/lang/en.js">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/lang/zh-cn.js">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/lang/zh-tw.js">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/My97DatePicker.htm">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/skin/datePicker.gif">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/skin/default/datepicker.css">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/skin/default/img.gif">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/skin/WdatePicker.css">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/skin/whyGreen/bg.jpg">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/skin/whyGreen/datepicker.css">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/skin/whyGreen/img.gif">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/WdatePicker.js">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/开发包/lang/en.js">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/开发包/lang/zh-cn.js">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/开发包/lang/zh-tw.js">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/开发包/readme.txt">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/开发包/skin/datePicker.gif">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/开发包/skin/default/datepicker.css">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/开发包/skin/default/img.gif">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/开发包/skin/WdatePicker.css">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/开发包/skin/whyGreen/bg.jpg">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/开发包/skin/whyGreen/datepicker.css">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Static/My97DatePicker/开发包/skin/whyGreen/img.gif">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Views/App/Index.cshtml">
+      <publishTime>12/25/2017 17:40:25</publishTime>
+    </File>
+    <File Include="Views/App/_AppTable.cshtml">
+      <publishTime>12/25/2017 15:52:42</publishTime>
+    </File>
+    <File Include="Views/AppSetting/Index.cshtml">
+      <publishTime>12/25/2017 15:06:20</publishTime>
+    </File>
+    <File Include="Views/AppSetting/_AppTable.cshtml">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Views/Login/Index.cshtml">
+      <publishTime>01/02/2018 18:29:37</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>12/25/2017 17:24:11</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>12/01/2017 14:09:57</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/03/2018 10:51:03</publishTime>
+    </File>
+  </ItemGroup>
 </Project>
