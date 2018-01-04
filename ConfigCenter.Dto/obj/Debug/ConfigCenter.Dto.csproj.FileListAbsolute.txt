@@ -53,3 +53,4 @@ D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Dto\bin\Debug\ServiceSt
 D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Dto\obj\Debug\ConfigCenter.Dto.csproj.CoreCompileInputs.cache
 D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Dto\obj\Debug\ConfigCenter.Dto.dll
 D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Dto\obj\Debug\ConfigCenter.Dto.pdb
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Dto\obj\Debug\ConfigCenter.Dto.csprojResolveAssemblyReference.cache
