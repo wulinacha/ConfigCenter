@@ -26,7 +26,8 @@ namespace ConfigCenter.Admin.Common
 
         public static string GetSaltPassword(string password, string salt)
         {
-            return $"{password}{salt}".ToPassword();
+            //return $"{password}{salt}".ToPassword();
+            return (password+salt).ToPassword();
         }
 
         public static string GetGuidShort() {
