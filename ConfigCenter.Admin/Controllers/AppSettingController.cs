@@ -9,7 +9,6 @@ using ConfigCenter.Dto;
 using Webdiyer.WebControls.Mvc;
 using ConfigCenter.Admin.Common;
 using ConfigCenter.Common.Extensions;
-using static ConfigCenter.Dto.ResultEnum;
 
 namespace ConfigCenter.Admin.Controllers
 {
@@ -67,22 +66,22 @@ namespace ConfigCenter.Admin.Controllers
                     if (isConfiKeyExisted)
                     {
                         AppSettingBusiness.SaveAppSetting(appSettingDto);
-                        responseResult = new ResponseResult(IsSuccess.成功, "新增配置成功");
+                        responseResult = new ResponseResult(ResultEnum.IsSuccess.成功, "新增配置成功");
                     }
                     else
                     {
-                        responseResult = new ResponseResult(IsSuccess.失败, "已存在该项配置，请考虑清楚再添加！");
+                        responseResult = new ResponseResult(ResultEnum.IsSuccess.失败, "已存在该项配置，请考虑清楚再添加！");
                     }
                 }
                 else
                 {
                     AppSettingBusiness.SaveAppSetting(appSettingDto);
-                    responseResult = new ResponseResult(IsSuccess.成功, "新增配置成功");
+                    responseResult = new ResponseResult(ResultEnum.IsSuccess.成功, "新增配置成功");
                 }
             }
             catch (Exception ex)
             {
-                responseResult = new ResponseResult(IsSuccess.失败, "添加配置异常，请联系管理员！"+ appSettingDto.AppId);
+                responseResult = new ResponseResult(ResultEnum.IsSuccess.失败, "添加配置异常，请联系管理员！"+ appSettingDto.AppId);
             }
             return Json(responseResult, JsonRequestBehavior.AllowGet);
         }

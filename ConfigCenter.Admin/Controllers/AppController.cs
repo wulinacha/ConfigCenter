@@ -7,11 +7,9 @@ using System.Web.Script.Serialization;
 using ConfigCenter.Business;
 using ConfigCenter.Dto;
 using Webdiyer.WebControls.Mvc;
-using static ConfigCenter.Dto.UserEnum;
 using System.Text;
 using ConfigCenter.Admin.Common;
 using ConfigCenter.Admin;
-using static ConfigCenter.Dto.ResultEnum;
 
 namespace ConfigCenter.Admin.Controllers    
 {
