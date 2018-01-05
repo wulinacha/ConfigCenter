@@ -5,9 +5,12 @@ using System.Text;
 
 namespace ConfigCenter.Dto
 {
-    public enum RoleEnum
+    public class UserEnum
     {
-        管理员,
-        普通人员
+        public enum RoleEnum {
+            管理员,
+            普通人员
+        }
     }
+
 }

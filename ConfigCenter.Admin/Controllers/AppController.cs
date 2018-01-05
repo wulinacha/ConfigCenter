@@ -10,6 +10,7 @@ using Webdiyer.WebControls.Mvc;
 using System.Text;
 using ConfigCenter.Admin.Common;
 using ConfigCenter.Admin;
+using static ConfigCenter.Dto.UserEnum;
 
 namespace ConfigCenter.Admin.Controllers    
 {
