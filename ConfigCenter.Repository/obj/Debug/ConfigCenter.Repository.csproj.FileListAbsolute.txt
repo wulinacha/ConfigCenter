@@ -21,3 +21,4 @@ D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Repository\bin\Debug\Co
 D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Repository\obj\Debug\ConfigCenter.Repository.csproj.CoreCompileInputs.cache
 D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Repository\obj\Debug\ConfigCenter.Repository.dll
 D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Repository\obj\Debug\ConfigCenter.Repository.pdb
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Repository\obj\Debug\ConfigCenter.Repository.csprojResolveAssemblyReference.cache

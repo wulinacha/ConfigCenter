@@ -5,6 +5,7 @@ using System.Text;
 using AutoMapper;
 using ConfigCenter.Dto;
 using ConfigCenterConnection;
+using System.Data.Common;
 
 namespace ConfigCenter.Business
 {
@@ -46,6 +47,29 @@ namespace ConfigCenter.Business
                 app.Version = DateTime.Now.ToString("yyyyMMddHHmmss");
                 app.Save();
             }
+        }
+
+        public static void SaveAppSettings(List<AppSettingDto> appSettingDtos,int appId)
+        {
+            foreach (var appSettingDto in appSettingDtos)
+            {
+                var appSetting = Mapper.Map<AppSettingDto, AppSetting>(appSettingDto);
+                appSetting.AppId = appId;
+                appSetting.Save();
+            }
+           
+
+            var app = App.SingleOrDefault(appId);
+            if (app != null)
+            {
+                app.Version = DateTime.Now.ToString("yyyyMMddHHmmss");
+                app.Save();
+            }
+        }
+
+        public static int DeleteSettingByAppid(int appid)
+        {
+            return AppSetting.Delete("Delete from AppSetting where appid=" +appid);
         }
 
         public static bool DeleteAppSettingById(int id)

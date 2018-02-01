@@ -50,3 +50,9 @@ D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Common\bin\Debug\Config
 D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Common\bin\Debug\AutoMapper.xml
 D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Common\obj\Debug\ConfigCenter.Common.dll
 D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Common\obj\Debug\ConfigCenter.Common.pdb
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Common\bin\Debug\NPOI.dll
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Common\bin\Debug\NPOI.OOXML.dll
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Common\bin\Debug\NPOI.OpenXml4Net.dll
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Common\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Common\bin\Debug\NPOI.xml

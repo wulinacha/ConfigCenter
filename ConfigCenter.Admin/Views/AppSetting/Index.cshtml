@@ -17,6 +17,9 @@
             $('#add_tmpl').tmpl().appendTo('div.modal-body');
             $('#myModalLabel').text('添加');
         });
+        $('input[id=lefile]').change(function () {
+            $('#photoCover').val($(this).val());
+        });
     });
 
     function edit(id) {
@@ -61,6 +64,66 @@
             }
         });
     };
+    function DeleteAlllAppSetting() {
+        if (confirm("确定删除全部配置吗?")) {
+            $.post('/AppSetting/DeleteAlllAppSetting?appid=' +@ViewBag.appid, null, function (res) {
+                if (res.Success) {
+                    window.location.reload();
+                } else {
+                    alert(res.Message);
+                }
+            });
+        }
+    }
+    function UploadFile() {
+        var fileObj = document.getElementById("lefile").files[0]; // js 获取文件对象
+        var url = "/AppSetting/Import?appid="+@ViewBag.appid; // 接收上传文件的后台地址 
+
+        var form = new FormData(); // FormData 对象
+        form.append("appSettingFile", fileObj); // 文件对象
+
+        xhr = new XMLHttpRequest();  // XMLHttpRequest 对象
+        xhr.open("post", url, true); //post方式，url为服务器请求地址，true 该参数规定请求是否异步处理。
+        xhr.onload = uploadComplete; //请求完成
+        xhr.onerror = uploadFailed; //请求失败
+        xhr.send(form); //开始上传，发送form数据
+    }
+    function uploadComplete(evt) {
+        //服务断接收完文件返回的结果
+
+        var data = JSON.parse(evt.target.responseText);
+        if (data.Success) {
+            alert("上传成功！");
+            clearFile();
+            $("#photoCover").val("");
+            window.location.reload();
+        } else {
+            alert("上传失败,格式不正确！");
+        }
+
+    }
+    function clearFile() {
+
+        var file = $("#lefile");
+
+        file.after('<input id="lefile" type="file" style="display: none;" />');
+
+        file.remove();
+    }
+    //上传失败
+    function uploadFailed(evt) {
+        alert("上传失败,格式不正确！");
+    }
+    //取消上传
+    function cancleUploadFile() {
+        xhr.abort();
+    }
+    function Export() {
+        window.location.href ="/AppSetting/Export?appid="+@ViewBag.appid;
+    }
+    function UploadTemple() {
+        window.location.href = "/AppSetting/Upload";
+    }
 </script>
 <style>
     .modal-dialog {
@@ -79,6 +142,13 @@
         <span>ConfigKey:  </span><input type="text" name="kword" value="@Request.QueryString["kword"]" style="width: 120px" class="form-control" />
         <input type="hidden" name="appId" value="@Request.QueryString["appId"]" />
         <input type="submit" value="搜索(S)" accesskey="S" class="btn btn-default" />
+        <input type="button" value="导出配置" onclick="Export()" accesskey="S" class="btn btn-primary" />
+        <input id="lefile" type="file" style="display: none;" />
+        <input type="text" id="photoCover" placeholder="FileUpload" style="width: 120px" class="form-control" />
+        <input type="button" value="上传" onclick="$('input[id=lefile]').click();" class="btn btn-primary" />
+        <input type="button" value="提交" class="btn btn-primary" onclick="UploadFile();" />
+        <input type="button" onclick="UploadTemple()" value="下载模板" accesskey="S" class="btn btn-primary" />
+        <input type="button" class="btn btn-danger" onclick="DeleteAlllAppSetting()" value="删除全部" />
     </div>
 }
 @Html.Partial("_AppTable", Model)

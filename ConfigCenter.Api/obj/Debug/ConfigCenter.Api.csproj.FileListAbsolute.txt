@@ -218,3 +218,9 @@ D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Api\bin\zh-Hans\System.
 D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Api\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
 D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Api\obj\Debug\ConfigCenter.Api.dll
 D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Api\obj\Debug\ConfigCenter.Api.pdb
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Api\bin\NPOI.dll
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Api\bin\NPOI.OOXML.dll
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Api\bin\ICSharpCode.SharpZipLib.dll
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Api\bin\NPOI.OpenXmlFormats.dll
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Api\bin\NPOI.OpenXml4Net.dll
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Api\bin\NPOI.xml

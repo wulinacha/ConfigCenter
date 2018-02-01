@@ -160,3 +160,9 @@ D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Admin\bin\zh-CHS\Webdiy
 D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Admin\bin\zh-CHT\Webdiyer.MvcPager.resources.dll
 D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Admin\obj\Debug\ConfigCenter.Admin.dll
 D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Admin\obj\Debug\ConfigCenter.Admin.pdb
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Admin\bin\ICSharpCode.SharpZipLib.dll
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Admin\bin\NPOI.dll
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Admin\bin\NPOI.OOXML.dll
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Admin\bin\NPOI.OpenXml4Net.dll
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Admin\bin\NPOI.OpenXmlFormats.dll
+D:\Project\ConfigCenter-master\ConfigCenter\ConfigCenter.Admin\bin\NPOI.xml

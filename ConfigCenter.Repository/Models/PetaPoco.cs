@@ -363,6 +363,17 @@ namespace PetaPoco
             }
         }
 
+        public void BeginTransactionShared()
+        {
+            OpenSharedConnection();
+            this._sharedConnection.BeginTransaction();
+        }
+
+        public void CommitTransactionShared()
+        {
+            this.Connection.CreateCommand();
+        }
+
         /// <summary>
         ///     Internal helper to cleanup transaction
         /// </summary>
@@ -2428,7 +2439,7 @@ namespace PetaPoco
 
         // Member variables
         private IMapper _defaultMapper;
-        private string _connectionString;
+        public string _connectionString;
         private IProvider _provider;
         private IDbConnection _sharedConnection;
         private IDbTransaction _transaction;
