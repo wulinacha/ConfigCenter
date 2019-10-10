@@ -8,5 +8,6 @@ namespace ConfigCenter.Admin
 {
     public class BaseConroller : Controller
     {
+
     }
 }

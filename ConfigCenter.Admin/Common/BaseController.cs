@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace ConfigCenter.Admin.Common
 {
-    //[LoginFilter]
+    [LoginFilter]
     public class BaseController : Controller
     {
         public string GetAccountName() {
