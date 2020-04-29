@@ -1,4 +1,4 @@
-﻿@using Webdiyer.WebControls.Mvc
+﻿@using Webdiyer.AspNetCore
 @model PagedList<ConfigCenter.Dto.AppDto>
 <table class="table table-bordered table-striped">
     <tr>
@@ -20,7 +20,7 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>@(Model.StartItemIndex + i++)</td> 
+            <td>@(Model.StartItemIndex + i++)</td>
             <td>
                 @Html.DisplayFor(modelItem => item.AppId)
             </td>

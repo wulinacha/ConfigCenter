@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using AutoMapper;
 using ConfigCenter.Dto;
-using ConfigCenterConnection;
 using System.Data.Common;
+using ConfigCenter.Repository.Model;
 
 namespace ConfigCenter.Business
 {

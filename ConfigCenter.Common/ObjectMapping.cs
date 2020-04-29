@@ -1,6 +1,8 @@
-﻿using AutoMapper;
+﻿
+
+using AutoMapper;
 using ConfigCenter.Dto;
-using ConfigCenterConnection;
+using ConfigCenter.Repository.Model;
 
 namespace ConfigCenter.Common
 {

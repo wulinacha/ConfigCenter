@@ -2,22 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Script.Serialization;
 using ConfigCenter.Business;
 using ConfigCenter.Dto;
-using Webdiyer.WebControls.Mvc;
 using System.Text;
 using ConfigCenter.Admin.Common;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using ConfigCenter.Admin.Models;
+using ConfigCenter.Admin.Models.Request;
 
 namespace ConfigCenter.Admin.Controllers
 {
     public class LoginController : Controller
     {
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private ISession _session => _httpContextAccessor.HttpContext.Session;
+        public LoginController(IHttpContextAccessor httpContextAccessor) {
+            _httpContextAccessor = httpContextAccessor;
+        }
         [HttpGet]
         public ActionResult Index()
         {
-            if (Session["name"] != null && !Request.IsAjaxRequest())
+            if (_session.GetString("name") != null && !Request.IsAjaxRequest())
             {
                 return GoToDefualt();
             }
@@ -26,42 +32,42 @@ namespace ConfigCenter.Admin.Controllers
         
         // GET: App
         [HttpPost]
-        public ActionResult Index(string name, string password)
+        public ActionResult Index([FromForm]LoginRequest login)
         {
-            if (Session["name"] != null && !Request.IsAjaxRequest())
+            if (_session.GetString("name") != null && !Request.IsAjaxRequest())
             {
                 return GoToDefualt();
             }
             ResponseResult responseResult = new ResponseResult(true,null);
-            if (name == null || password == null)
+            if (login.name == null || login.password == null)
             {
                 responseResult = new ResponseResult(false, "用户名和密码不能为空");
-                return Json(responseResult, JsonRequestBehavior.AllowGet);
+                return Json(responseResult);
             }
-            AccountDto userDto=AccountBusiness.GetAccountByName(name);
+            AccountDto userDto=AccountBusiness.GetAccountByName(login.name);
             if (userDto == null)
             {
                 responseResult = new ResponseResult(false, "用户名不正确");
-                return Json(responseResult, JsonRequestBehavior.AllowGet);
+                return Json(responseResult);
             }
-            string saltPassword = LoginHelper.GetSaltPassword(password, userDto.Salt);
-            if (userDto.Name != name || userDto.Password != saltPassword)
+            string saltPassword = LoginHelper.GetSaltPassword(login.password, userDto.Salt);
+            if (userDto.Name != login.name || userDto.Password != saltPassword)
             {
                 responseResult = new ResponseResult(false, "密码不正确");
-                return Json(responseResult, JsonRequestBehavior.AllowGet);
+                return Json(responseResult);
             }
 
-            LoginHelper.Login(name,password, userDto.RoleId.ToString());
+            LoginHelper.Login(new LoginModel { 
+                name= login.name,
+                password= login.password,
+                rolename= userDto.RoleId.ToString()
+            },_session);
             
             responseResult = new ResponseResult(true, "/App/Index");
-            return Json(responseResult, JsonRequestBehavior.AllowGet);
+            return Json(responseResult);
         }
 
-        public ActionResult logout()
-        {
-            LoginHelper.Logout();
-            return Redirect("/Login/Index");
-        }
+
 
         private ActionResult GoToDefualt()
         {

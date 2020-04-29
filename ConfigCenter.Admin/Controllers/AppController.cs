@@ -2,39 +2,46 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Script.Serialization;
 using ConfigCenter.Business;
 using ConfigCenter.Dto;
-using Webdiyer.WebControls.Mvc;
 using System.Text;
 using ConfigCenter.Admin.Common;
 using ConfigCenter.Admin;
 using static ConfigCenter.Dto.UserEnum;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using Webdiyer.AspNetCore;
 
 namespace ConfigCenter.Admin.Controllers    
 {
+    [Route("App")]
     public class AppController : BaseController 
     {
-        // GET: App
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private ISession _session => _httpContextAccessor.HttpContext.Session;
+        public AppController(IHttpContextAccessor httpContextAccessor) {
+            _httpContextAccessor = httpContextAccessor;
+        }
+        [HttpGet("Index")]
         public ActionResult Index(int pageindex = 1, string kword = "")
         {
             long totalItem;
+            int pageSize = 12;
             string sarchKword;
 
-            sarchKword = GetProjectNameIfAdminOrSpeac(kword);
+             sarchKword = GetProjectNameIfAdminOrSpeac(kword); 
 
-            ViewData["roleName"] = Session["roleName"];
+             ViewData["rolename"] = _session.GetString("rolename");
 
-            var dto = AppBusiness.GetApps(pageindex, 20, sarchKword, out totalItem);
+            var pageList = AppBusiness.GetApps(pageindex, pageSize, sarchKword, out totalItem).ToPagedList(pageindex, pageSize,totalItem);
 
-            return View(new PagedList<AppDto>(dto, pageindex, 20, (int)totalItem));
+            return View(pageList);
         }
 
         private string GetProjectNameIfAdminOrSpeac(string kword)
         {
-            if (Session["roleName"].ToString() != RoleEnum.管理员.ToString())//非管理员不提供搜索
-                kword = Session["name"].ToString();
+            if (_session.GetString("rolename") != RoleEnum.管理员.ToString())//非管理员不提供搜索
+                kword = _session.GetString("name");
             return kword;
         }
 
@@ -42,38 +49,43 @@ namespace ConfigCenter.Admin.Controllers
         /// 密码重新加密
         /// </summary>
         /// <returns></returns>
-        public JsonResult InitAccountPassword()
-        {
-            ResponseResult responseResult = null;
-            try
-            {
-                List<AccountDto> list = AccountBusiness.GetAccountList();
-                //盐值
-                string salt = LoginHelper.GetGuidShort();
-                list.ForEach(e =>
-                {
-                    var model = e;
-                    model.Password = LoginHelper.GetSaltPassword(e.Password, salt);
-                    model.Salt = salt;
-                    AccountBusiness.SaveUser(model);
-                });
-                responseResult = new ResponseResult(ResultEnum.IsSuccess.成功, "成功初始化");
-            }
-            catch (Exception ex)
-            {
+        //public JsonResult InitAccountPassword()
+        //{
+        //    ResponseResult responseResult = null;
+        //    try
+        //    {
+        //        List<AccountDto> list = AccountBusiness.GetAccountList();
+        //        //盐值
+        //        string salt = LoginHelper.GetGuidShort();
+        //        list.ForEach(e =>
+        //        {
+        //            var model = e;
+        //            model.Password = LoginHelper.GetSaltPassword(e.Password, salt);
+        //            model.Salt = salt;
+        //            AccountBusiness.SaveUser(model);
+        //        });
+        //        responseResult = new ResponseResult(ResultEnum.IsSuccess.成功, "成功初始化");
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                responseResult= new ResponseResult(ResultEnum.IsSuccess.失败, "初始化失败");
-            }
+        //        responseResult= new ResponseResult(ResultEnum.IsSuccess.失败, "初始化失败");
+        //    }
            
-            return Json(responseResult);
-        }
-
+        //    return Json(responseResult);
+        //}
+        [HttpGet("GetAppByid")]
         public JsonResult GetAppById(int id)
         {
-            return Json(new ResponseResult(ResultEnum.IsSuccess.成功, "获取成功", AppBusiness.GetAppById(id)), JsonRequestBehavior.AllowGet);
+            var appdto = AppBusiness.GetAppById(id);
+            appdto.Envs = new List<ConfigEnvironment>();
+            appdto.Envs.Add(new ConfigEnvironment() { Name="DEV",Desc= "DEV(开发环境)" });
+            appdto.Envs.Add(new ConfigEnvironment() { Name = "ALPHA", Desc = "ALPHA(测试环境)" });
+            appdto.Envs.Add(new ConfigEnvironment() { Name = "PROD", Desc = "PROD(正式环境)" });
+            return Json(new ResponseResult(ResultEnum.IsSuccess.成功, "获取成功", appdto));
             //return Json(AppBusiness.GetAppById(id), JsonRequestBehavior.AllowGet);
         }
-
+        [HttpPost("DeleteAppById")]
         public JsonResult DeleteAppById(int id)
         {
             ResponseResult responseResult;
@@ -86,9 +98,9 @@ namespace ConfigCenter.Admin.Controllers
             {
                 responseResult = new ResponseResult(false, "");
             }
-            return Json(responseResult, JsonRequestBehavior.AllowGet);
+            return Json(responseResult); 
         }
-
+        [HttpPost("SaveApp")]
         public JsonResult SaveApp(AppDto appDto)
         {
             ResponseResult responseResult;
@@ -99,11 +111,11 @@ namespace ConfigCenter.Admin.Controllers
                 AddAccountIfNo(appDto);
                 responseResult = new ResponseResult(true, "");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 responseResult = new ResponseResult(false, "");
             }
-            return Json(responseResult, JsonRequestBehavior.AllowGet);
+            return Json(responseResult);
         }
 
         /// <summary>

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using ConfigCenter.Dto;
+using ConfigCenter.Repository.Model;
 using System.Collections.Generic;
 using System.Linq;
-using ConfigCenterConnection;
 
 namespace ConfigCenter.Business
 {
@@ -12,7 +12,7 @@ namespace ConfigCenter.Business
         {
             var page = Account.Page(pageIndex, pageSize, "WHERE AppId LIKE @0", new object[] { "%" + kword + "%" });
             totalPage = page.TotalItems;
-            return Mapper.Map<List<Account>, List<AccountDto>>(page.Items);
+            return Mapper.Map<List<Account>,List<AccountDto>>(page.Items);
         }
 
         public static AccountDto GetAccountById(int Id)

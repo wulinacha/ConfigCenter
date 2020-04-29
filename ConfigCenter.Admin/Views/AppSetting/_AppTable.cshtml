@@ -1,4 +1,4 @@
-﻿@using Webdiyer.WebControls.Mvc
+﻿@using Webdiyer.AspNetCore
 @model PagedList<ConfigCenter.Dto.AppSettingDto>
 <table class="table table-bordered table-striped">
     <tr>
@@ -10,8 +10,8 @@
             @Html.DisplayNameFor(model => model.ConfigValue)
         </th>
         @*<th style="width:15%">
-            @Html.DisplayNameFor(model => model.ConfigType)
-        </th>*@
+                @Html.DisplayNameFor(model => model.ConfigType)
+            </th>*@
         <th style="width:15%">
             操作
         </th>
@@ -28,15 +28,15 @@
                 @Html.DisplayFor(modelItem => item.ConfigValue)
             </td>
             @*<td>
-                @if (item.ConfigType == 0)
-                {
-                   @Html.Raw("AppSetting")
-                }
-                else
-                {
-                    @Html.Raw("ConnectionString")
-                }
-            </td>*@
+                    @if (item.ConfigType == 0)
+                    {
+                       @Html.Raw("AppSetting")
+                    }
+                    else
+                    {
+                        @Html.Raw("ConnectionString")
+                    }
+                </td>*@
             <td>
                 <a data-toggle="modal" class="btn btn-info" href="#" data-target="#myModal" data-id=@item.Id>编辑</a>
                 <a class="btn btn-danger" href="#" data-id=@item.Id>删除</a>

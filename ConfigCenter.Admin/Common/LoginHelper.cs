@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using ConfigCenter.Admin;
+using ConfigCenter.Admin.Models;
 using ConfigCenter.Dto;
+using Microsoft.AspNetCore.Http;
 
 namespace ConfigCenter.Admin.Common
 {
     public class LoginHelper
     {
-        public static void Login(string name,string password,string roleName,string salt=null)
+        public static void Login(LoginModel login,ISession session)
         {
-            var session= HttpContext.Current.Session;
-            session["name"] = name;
-            session["password"] = password;
-            session["roleName"] = roleName;
+            session.SetString("name", login.name);
+            session.SetString("password", login.password);
+            session.SetString("rolename",login.rolename);
         }
 
         public static void Logout()
         {
-            var session = HttpContext.Current.Session;
+            var session = CurrentHttpContext.Current.Session;
             session.Clear();
 
         }

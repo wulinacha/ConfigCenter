@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using ConfigCenter.Dto;
+using ConfigCenter.Repository.Model;
 using System.Collections.Generic;
-using ConfigCenterConnection;
 
 namespace ConfigCenter.Business
 {

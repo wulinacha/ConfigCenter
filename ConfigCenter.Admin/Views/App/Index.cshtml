@@ -1,4 +1,6 @@
-﻿@using Webdiyer.WebControls.Mvc
+﻿@using Microsoft.AspNetCore.Routing
+@using Webdiyer.AspNetCore
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor  _httpContextAccessor
 @model PagedList<ConfigCenter.Dto.AppDto>
 <script type="text/javascript">
     var platform = '';
@@ -20,14 +22,14 @@
     });
 
     function edit(id) {
-        $.getJSON('/App/GetAppByid', { "id": id,random: Math.random() }, function (data) {
-            if (data.Success) {
+        $.getJSON('/App/GetAppByid', { "id": id, random: Math.random() }, function (data) {
+            if (data.success) {
                 $('div.modal-body').html('');
-                $('#edit_tmpl').tmpl(data.Data).appendTo('div.modal-body');
+                $('#edit_tmpl').tmpl(data.data).appendTo('div.modal-body');
                 $('#myModalLabel').text('修改');
             } else {
-                if (data.ErrorType == noLogin)
-                    window.location.href = "/Login/Index";
+                if (data.errorType == noLogin)
+                    window.location.href = "/Login";
                 else
                     alert("获取失败");
             }
@@ -36,12 +38,12 @@
 
     function del(id) {
         if (confirm("确定删除吗?")) {
-            $.getJSON('/App/DeleteAppByid', { "id": id, random: Math.random() }, function (data) {
-                if (data.Success) {
+            $.post('/App/DeleteAppByid', { "id": id, random: Math.random() }, function (data) {
+                if (data.success) {
                     window.location.reload();
                 } else {
-                    if (data.ErrorType == noLogin)
-                        window.location.href = "/Login/Index";
+                    if (data.errorType == noLogin)
+                        window.location.href = "/Login";
                     else
                         alert("删除失败");
                 }
@@ -51,11 +53,11 @@
     function save() {
         var data = $('#edit_form').serialize() || $('#form_add').serialize();
         $.post('/App/SaveApp', data, function (res) {
-            if (res.Success) {
+            if (res.success) {
                 window.location.reload();
             } else {
-                if (data.ErrorType == noLogin)
-                    window.location.href = "/Login/Index";
+                if (data.errorType == noLogin)
+                    window.location.href = "/Login";
                 else
                     alert("保存失败");
             }
@@ -64,7 +66,7 @@
     function InitPassword() {
         var data = $('#edit_form').serialize() || $('#form_add').serialize();
         $.post('/App/InitAccountPassword', data, function (res) {
-            if (res.Success) {
+            if (res.success) {
                 alert("初始化成功");
             }
         });
@@ -72,24 +74,25 @@
 </script>
 
 <ol class="breadcrumb">
-    <li><a href="/Login/Index">配置中心</a></li>
+    <li><a href="/Login">配置中心</a></li>
     <li class="active">应用列表( <a id="newplatform" data-toggle="modal" data-target="#myModal">添加新应用</a>)</li>
     @*<li class="active"><a href="javascript:InitPassword()">重新初始化密码</a></li>*@
 </ol>
-@using (Html.BeginForm("Index", ViewContext.RouteData.GetRequiredString("Controller"), new RouteValueDictionary { { "pageindex", "" } }, FormMethod.Get))
+@using (Html.BeginForm("Index", ViewContext.RouteData.Values["Controller"].ToString(), new RouteValueDictionary { { "pageindex", "" } }, FormMethod.Get, true, ""))
 {
     <div class="form-inline well well-sm">
         @if (ViewData["roleName"].ToString() == ConfigCenter.Dto.UserEnum.RoleEnum.管理员.ToString())
         {
 
-            <span>Appid  </span><input type="text" name="kword" value="@Request.QueryString["kword"]" style="width: 120px" class="form-control" />
-                <input type="submit" value="搜索(S)" accesskey="S" class="btn btn-default" />
+            <span>Appid  </span><input type="text" name="kword" value="@_httpContextAccessor.HttpContext.Request.Query["kword"]" style="width: 120px" class="form-control" />
+            <input type="submit" value="搜索(S)" accesskey="S" class="btn btn-default" />
         }
     </div>
 }
 
 @Html.Partial("_AppTable", Model)
-@Html.Pager(Model, new PagerOptions { HorizontalAlign = "right", ContainerTagName = "ul", CssClass = "pagination", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}&nbsp;</li>", Id = "bootstrappager" })
+@*@Html.Pager("",new PageOption() { DataCount=Model.DataCount,PageIndex=Model.PageIndex,PageSize=Model.PageSize})*@
+@Html.Pager(Model, new PagerOptions { HorizontalAlign = "right", CssClass = "pagination", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}&nbsp;</li>", Id = "bootstrappager" })
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -136,28 +139,31 @@
         <div class="form-group">
             <label class="col-sm-3 control-label">应用名称</label>
             <div class="col-xs-8">
-                <input type="text" class="form-control" name="AppId" value="${AppId}">
+                <input type="text" class="form-control" name="AppId" value="${appId}">
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">应用环境</label>
             <div class="col-xs-8">
                 <select class="form-control" name="Environment">
-                    <option value="DEV">DEV(开发环境)</option>
-                    <option value="PROD">PROD(正式环境)</option>
+                    {{each envs}}
+                    <option value="${$value.name}">${$value.desc}</option>
+                    {{/each}}
+                    @*<option value="DEV">DEV(开发环境)</option>
+        <option value="PROD">PROD(正式环境)</option>*@
                 </select>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">应用版本号</label>
             <div class="col-xs-8">
-                <input type="text" class="form-control" name="Version" value="${Version}">
+                <input type="text" class="form-control" name="Version" value="${version}">
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="button" class="btn btn-primary" onclick="save();">提交</button>
-                <input type="hidden" name="id" value="${Id}" />
+                <input type="hidden" name="id" value="${id}" />
             </div>
         </div>
     </form>

@@ -1,17 +1,15 @@
 ﻿using ConfigCenter.Dto;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
 
 namespace ConfigCenter.Admin.Common
 {
-    [LoginFilter]
+    [TypeFilter(typeof(LoginAttribute))]
     public class BaseController : Controller
     {
-        public string GetAccountName() {
-            return Session["Name"].ToString();
-        }
     }
 }

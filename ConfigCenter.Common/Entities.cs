@@ -1,4 +1,5 @@
-﻿using NPOI.HSSF.UserModel;
+﻿using Microsoft.AspNetCore.Http;
+using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using System;
@@ -33,7 +34,7 @@ namespace ConfigCenter.Common
         ///  <param name="fileNameurl">表名</param>
         /// <param name="sheetName">excel工作薄sheet的名称</param>
         /// <returns>返回的DataTable</returns>
-        public static DataTable ExcelToDataTableHelper(HttpPostedFileBase file, string sheetName)
+        public static DataTable ExcelToDataTableHelper(IFormFile file, string sheetName)
         {
             return ExcelToDataTableHelper(file, sheetName, 1);
         }
@@ -45,12 +46,12 @@ namespace ConfigCenter.Common
         /// <param name="sheetName">excel工作薄sheet的名称</param>
         /// <param name="ColumnNum">第几行是表头</param>
         /// <returns>返回的DataTable</returns>
-        public static DataTable ExcelToDataTableHelper(HttpPostedFileBase file, string sheetName, int ColumnNum)
+        public static DataTable ExcelToDataTableHelper(IFormFile file, string sheetName, int ColumnNum)
         {
             ISheet sheet = null;
             DataTable data = new DataTable();
             int startRow = 0;
-            var stream = file.InputStream;
+            var stream = file.OpenReadStream();
             try
             {
                 if (file.FileName.IndexOf(".xlsx") > 0) // 2007版本

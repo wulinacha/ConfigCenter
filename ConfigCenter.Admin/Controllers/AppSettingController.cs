@@ -2,28 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Script.Serialization;
 using ConfigCenter.Business;
 using ConfigCenter.Dto;
-using Webdiyer.WebControls.Mvc;
 using ConfigCenter.Admin.Common;
-using ConfigCenter.Common.Extensions;
 using System.IO;
 using System.Data;
 using ConfigCenter.Common;
 using NPOI.XSSF.UserModel;
 using System.Text;
+using Microsoft.AspNetCore.Mvc;
+using ConfigCenter.Common.Extends;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
+using Webdiyer.AspNetCore;
 
 namespace ConfigCenter.Admin.Controllers
 {
+    [Route("AppSetting")]
     public class AppSettingController : BaseController
     {
+        public IHostingEnvironment _hostingEnvironment;
+        public AppSettingController(IHostingEnvironment hostingEnvironment) {
+            _hostingEnvironment = hostingEnvironment;
+        }
+        [HttpGet("Index")]
         // GET: App
-        public ActionResult Index(int pageindex = 1, int appId = 0, string kword = "")
+        public ActionResult Index(int pageindex = 1, string kword = "",int appId = 0)
         {
             long totalItem;
-            var dto = AppSettingBusiness.GetAppSettings(appId, pageindex,20, kword, out totalItem);
+            int pageSize = 15;
+            var pageList = AppSettingBusiness.GetAppSettings(appId, pageindex,pageSize, kword, out totalItem).ToPagedList(pageindex,pageSize, totalItem);
             var app = AppBusiness.GetAppById(appId);
             ViewBag.appid = appId;
             if (app != null)
@@ -36,20 +44,20 @@ namespace ConfigCenter.Admin.Controllers
                 ViewData["Evn"] = "无法识别";
                 ViewData["ProjectName"] = "无法识别";
             }
-            return View(new PagedList<AppSettingDto>(dto, pageindex, 20, (int)totalItem));
+            return View(pageList);
         }
         /// <summary>
         /// 下载模板
         /// </summary>
         /// <param name="file"></param>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet("Upload")]
         public ActionResult Upload()
         {
             string fileName = "配置.xlsx";
             try
             {
-                var filePath = Path.Combine(Request.MapPath("~/Upload"), Path.GetFileName(fileName));
+                var filePath = Path.Combine(_hostingEnvironment.ContentRootPath+"~/Upload", Path.GetFileName(fileName));
                 //创建文件流  
                 FileStream myfs = new FileStream(filePath, FileMode.Open);
 
@@ -64,14 +72,15 @@ namespace ConfigCenter.Admin.Controllers
         /// 导入数据
         /// </summary>
         /// <returns></returns>
-        [HttpPost]
-        public ActionResult Import(int appid)
+        [HttpPost("Import")]
+        public ActionResult Import([FromQuery]int appid, [FromForm]IFormCollection formData)
         {
             try
             {
                 int appIdSelf= appid;
                 //存入本地
-                var file = Request.Files[0];
+                IFormFile file = formData.Files.FirstOrDefault();
+                //var file = Request.Files[0];
 
                 string sheet = "配置";
                 List<AppSettingDto> appSettings = new List<AppSettingDto>();
@@ -96,7 +105,7 @@ namespace ConfigCenter.Admin.Controllers
             return Json(new ResponseResult(true, "上传成功！"));
         }
 
-        [HttpPost]
+        [HttpPost("DeleteAlllAppSetting")]
         public ActionResult DeleteAlllAppSetting(int appid)
         {
             try
@@ -105,14 +114,12 @@ namespace ConfigCenter.Admin.Controllers
             }
             catch (Exception ex)
             {
-                return Json(new ResponseResult(false, "删除所有失败"),
-               JsonRequestBehavior.AllowGet);
+                return Json(new ResponseResult(false, "删除所有失败"));
             }
-            return Json(new ResponseResult(true, "删除所有成功"),
-               JsonRequestBehavior.AllowGet);
+            return Json(new ResponseResult(true, "删除所有成功"));
         }
 
-        [HttpGet]
+        [HttpGet("Export")]
         public FileResult Export(int appId)
         {
             //获取list数据
@@ -146,13 +153,12 @@ namespace ConfigCenter.Admin.Controllers
             string fileName = "配置" + ".xls";
             return File(ms, "application/vnd.ms-excel", fileName);
         }
-
+        [HttpGet("GetAppSettingById")]
         public JsonResult GetAppSettingById(int id)
         {
-            return Json(new ResponseResult(true,"获取成功", AppSettingBusiness.GetAppSettingById(id)),
-                JsonRequestBehavior.AllowGet);
+            return Json(new ResponseResult(true,"获取成功", AppSettingBusiness.GetAppSettingById(id)));
         }
-
+        [HttpPost("DeleteAppSettingById"), HttpGet("DeleteAppSettingById")]
         public JsonResult DeleteAppSettingById(int id)
         {
             ResponseResult responseResult;
@@ -165,9 +171,10 @@ namespace ConfigCenter.Admin.Controllers
             {
                 responseResult = new ResponseResult(false, "");
             }
-            return Json(responseResult, JsonRequestBehavior.AllowGet);
+            return Json(responseResult);
         }
 
+        [HttpPost("SaveAppSetting"),HttpGet("SaveAppSetting")]
         public JsonResult SaveAppSetting(AppSettingDto appSettingDto)
         {
             ResponseResult responseResult;
@@ -197,13 +204,13 @@ namespace ConfigCenter.Admin.Controllers
             {
                 responseResult = new ResponseResult(ResultEnum.IsSuccess.失败, "添加配置异常，请联系管理员！"+ appSettingDto.AppId);
             }
-            return Json(responseResult, JsonRequestBehavior.AllowGet);
+            return Json(responseResult);
         }
 
         private static bool ConfiKeyExisted(AppSettingDto appSettingDto)
         {
             var appSetting = AppSettingBusiness.GetAppSettingByKeyAndAppId(appSettingDto.ConfigKey, appSettingDto.AppId);
-            return appSetting.IsNull();
+            return appSetting==null;
         }
     }
 }

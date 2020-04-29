@@ -18,6 +18,12 @@ namespace ConfigCenter.Dto
         public string Version { get; set; }
         [Display(Name ="应用环境")]
         public string Environment { get; set; }
+        public List<ConfigEnvironment> Envs { get; set; }
+    }
+
+    public class ConfigEnvironment {
+        public string Name { get; set; }
+        public string Desc { get; set; }
     }
 
     #endregion Dto
@@ -38,7 +44,7 @@ namespace ConfigCenter.Dto
 
 
     #region /app/lastversion
-    [Route("/app/version/{AppId}", "GET")]
+    //[Route("/app/version/{AppId}", "GET")]
     public class GetAppVersion : IReturn<GetAppVersionResponse>
     {
         public string AppId { get; set; }
