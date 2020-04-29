@@ -1,0 +1,226 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Project\\基础框架\\configcenter\\ConfigCenter.Common\\ConfigCenter.Common.csproj": {}
+  },
+  "projects": {
+    "D:\\Project\\基础框架\\configcenter\\ConfigCenter.Common\\ConfigCenter.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Project\\基础框架\\configcenter\\ConfigCenter.Common\\ConfigCenter.Common.csproj",
+        "projectName": "ConfigCenter.Common",
+        "projectPath": "D:\\Project\\基础框架\\configcenter\\ConfigCenter.Common\\ConfigCenter.Common.csproj",
+        "packagesPath": "C:\\Users\\22138\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\基础框架\\configcenter\\ConfigCenter.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\22138\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\Project\\基础框架\\configcenter\\ConfigCenter.Dto\\ConfigCenter.Dto.csproj": {
+                "projectPath": "D:\\Project\\基础框架\\configcenter\\ConfigCenter.Dto\\ConfigCenter.Dto.csproj"
+              },
+              "D:\\Project\\基础框架\\configcenter\\ConfigCenter.Repository\\ConfigCenter.Repository.csproj": {
+                "projectPath": "D:\\Project\\基础框架\\configcenter\\ConfigCenter.Repository\\ConfigCenter.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[4.2.1, )"
+            },
+            "NPOI": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Project\\基础框架\\configcenter\\ConfigCenter.Dto\\ConfigCenter.Dto.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Project\\基础框架\\configcenter\\ConfigCenter.Dto\\ConfigCenter.Dto.csproj",
+        "projectName": "ConfigCenter.Dto",
+        "projectPath": "D:\\Project\\基础框架\\configcenter\\ConfigCenter.Dto\\ConfigCenter.Dto.csproj",
+        "packagesPath": "C:\\Users\\22138\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\基础框架\\configcenter\\ConfigCenter.Dto\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\22138\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "ServiceStack": {
+              "target": "Package",
+              "version": "[5.8.0, )"
+            },
+            "ServiceStack.Client": {
+              "target": "Package",
+              "version": "[5.8.0, )"
+            },
+            "ServiceStack.Common": {
+              "target": "Package",
+              "version": "[5.8.0, )"
+            },
+            "ServiceStack.Interfaces": {
+              "target": "Package",
+              "version": "[5.8.0, )"
+            },
+            "ServiceStack.Text": {
+              "target": "Package",
+              "version": "[5.8.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Project\\基础框架\\configcenter\\ConfigCenter.Repository\\ConfigCenter.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Project\\基础框架\\configcenter\\ConfigCenter.Repository\\ConfigCenter.Repository.csproj",
+        "projectName": "ConfigCenter.Repository",
+        "projectPath": "D:\\Project\\基础框架\\configcenter\\ConfigCenter.Repository\\ConfigCenter.Repository.csproj",
+        "packagesPath": "C:\\Users\\22138\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\基础框架\\configcenter\\ConfigCenter.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\22138\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "ServiceStack.OrmLite": {
+              "target": "Package",
+              "version": "[5.8.0, )"
+            },
+            "ServiceStack.OrmLite.MySql": {
+              "target": "Package",
+              "version": "[5.8.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

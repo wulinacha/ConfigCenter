@@ -1,0 +1,16 @@
+D:\Project\基础框架\configcenter\ConfigCenter\ConfigCenter.Dto\bin\Debug\netcoreapp3.1\ConfigCenter.Dto.deps.json
+D:\Project\基础框架\configcenter\ConfigCenter\ConfigCenter.Dto\bin\Debug\netcoreapp3.1\ConfigCenter.Dto.dll
+D:\Project\基础框架\configcenter\ConfigCenter\ConfigCenter.Dto\obj\Debug\netcoreapp3.1\ConfigCenter.Dto.AssemblyInfoInputs.cache
+D:\Project\基础框架\configcenter\ConfigCenter\ConfigCenter.Dto\obj\Debug\netcoreapp3.1\ConfigCenter.Dto.AssemblyInfo.cs
+D:\Project\基础框架\configcenter\ConfigCenter\ConfigCenter.Dto\bin\Debug\netcoreapp3.1\ConfigCenter.Dto.pdb
+D:\Project\基础框架\configcenter\ConfigCenter\ConfigCenter.Dto\obj\Debug\netcoreapp3.1\ConfigCenter.Dto.dll
+D:\Project\基础框架\configcenter\ConfigCenter\ConfigCenter.Dto\obj\Debug\netcoreapp3.1\ConfigCenter.Dto.pdb
+D:\Project\基础框架\configcenter\ConfigCenter\ConfigCenter.Dto\obj\Debug\netcoreapp3.1\ConfigCenter.Dto.csprojAssemblyReference.cache
+D:\Project\基础框架\configcenter\ConfigCenter.Dto\bin\Debug\netcoreapp3.1\ConfigCenter.Dto.deps.json
+D:\Project\基础框架\configcenter\ConfigCenter.Dto\bin\Debug\netcoreapp3.1\ConfigCenter.Dto.dll
+D:\Project\基础框架\configcenter\ConfigCenter.Dto\bin\Debug\netcoreapp3.1\ConfigCenter.Dto.pdb
+D:\Project\基础框架\configcenter\ConfigCenter.Dto\obj\Debug\netcoreapp3.1\ConfigCenter.Dto.csprojAssemblyReference.cache
+D:\Project\基础框架\configcenter\ConfigCenter.Dto\obj\Debug\netcoreapp3.1\ConfigCenter.Dto.AssemblyInfoInputs.cache
+D:\Project\基础框架\configcenter\ConfigCenter.Dto\obj\Debug\netcoreapp3.1\ConfigCenter.Dto.AssemblyInfo.cs
+D:\Project\基础框架\configcenter\ConfigCenter.Dto\obj\Debug\netcoreapp3.1\ConfigCenter.Dto.dll
+D:\Project\基础框架\configcenter\ConfigCenter.Dto\obj\Debug\netcoreapp3.1\ConfigCenter.Dto.pdb
