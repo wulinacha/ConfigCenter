@@ -47,7 +47,7 @@ if(evn=='Development'){
     }
 }
 if(evn=='Staging'){
-  node ('for_alpha_centos_16')
+  node ('for_aliyun_001')
   {
        DeployApplication();
 	   //ExecuteTest();
