@@ -35,7 +35,9 @@ node (buildnode)
         }
     }
     stage('¹¹½¨') {
-        sh 'docker build -t ${applicationname} .'
+        dir(mybuildpath){
+            sh 'docker build -t ${applicationname} .'
+        }
     }
 }
 ///////// end
