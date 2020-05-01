@@ -35,11 +35,7 @@ node (buildnode)
         }
     }
     stage('¹¹½¨') {
-        docker.withRegistry('https://hub.zhidianlife.com') {//--no-cache
-            def customImage = docker.build("${projectname}/${applicationname}-${evnlowercase}:${version}",
-            "  --build-arg ENVIRONMENT=${evn} ${mybuildpath}")
-				customImage.push();
-        }
+        sh 'docker build -t ${applicationname} .'
     }
 }
 ///////// end
@@ -58,12 +54,7 @@ if(evn=='Staging'){
   }
 }
 if(evn=='Production'){
-  //if(myapplicationtype=='web'){
-  //node ("for_Ubuntu_224"){
-   //  DeployApplication();
-//	} 
-  //}
-  node ("for_Centos_226"){
+  node ("for_aliyun_001"){
     DeployApplication();
   }
 }
@@ -99,15 +90,5 @@ def DropContainer(){
 //²¿Êð
 def DeployApplication(){
 	DropContainer();
-    docker.withRegistry('https://hub.zhidianlife.com') {
-       def image=docker.image("hub.zhidianlife.com/${projectname}/${applicationname}-${evnlowercase}:${version}");
-       image.pull();
-       def runstr='';
-       if(myapplicationtype=='web'){
-			runstr=" -v /usr/local/bin/:/usr/local/bin/ --name='${applicationname}' --restart=always -p ${myapplcationpoint}:80 ";
-		}else{
-				runstr=" --name='${applicationname}' --restart=always ";
-		}
-            image.run(runstr);
-       }	
+    sh 'docker run --name ${applicationname} -p ${myapplcationpoint}:80 -d ${applicationname}'	
 }
