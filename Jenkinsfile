@@ -9,7 +9,7 @@ applicationname="${params.applicationname}";//应用程序名
 gitbranch="${params.gitbranch}";//git分支名称
 evn="${params.evn}";//应用程序运行环境 例如 Development/Staging/Production
 evnlowercase="${params.evn}".toLowerCase();//应用程序运行环境,小写
-myapplcationpoint="${params.applcationpoint}";//应用程序端口 
+applcationpoint="${params.applcationpoint}";//应用程序端口 
 mybuildpath="${workpath}/${params.buildpath}";//执行编译目录 例如 /share/wms/src/Api/WMS.WebApi
 myapplicationtype="${applicationtype}".toLowerCase();//应用程序类型 例如 Console/Web
 buildnode=GetBuildNode(evn);//获取编译机器标签
@@ -84,5 +84,5 @@ def DropContainer(){
 //部署
 def DeployApplication(){
 	DropContainer();
-    sh 'docker run --name ${applicationname} -p ${applicationname}:80 -d ${applicationname}'	
+    sh 'docker run --name ${applicationname} -p ${applcationpoint}:80 -d ${applicationname}'	
 }
