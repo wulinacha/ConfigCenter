@@ -1,5 +1,5 @@
 projectname="configcenter";
-gitpath="http://tututech.f3322.net:8000/chenxiaobo/configcenter.git";
+gitpath="https://github.com/wulinacha/ConfigCenter.git";
 workpath="/home/share/configcenter";
 dllpath="/home/share/configcenter/lib";
 version="v1.0";
