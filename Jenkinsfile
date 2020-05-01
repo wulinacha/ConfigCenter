@@ -74,7 +74,7 @@ def GetBuildNode(environmental){
 	if(environmental=='Development'){
 		buildnode="for_ubuntu";
 	}else{
-		buildnode="for_alpha_centos_16";
+		buildnode="for_aliyun_001";
 	}
 	return buildnode;
 }
