@@ -11,7 +11,7 @@ evn="${params.evn}";//应用程序运行环境 例如 Development/Staging/Production
 evnlowercase="${params.evn}".toLowerCase();//应用程序运行环境,小写
 mybuildpath="${workpath}/${params.buildpath}";//执行编译目录 例如 /share/wms/src/Api/WMS.WebApi
 myapplicationtype="${applicationtype}".toLowerCase();//应用程序类型 例如 Console/Web
-myapplcationpoint=GetApplicationPoint(myapplicationtype);//应用程序端口 如果为控制台程序，则返回“”
+myapplcationpoint="${applcationpoint}";//应用程序端口 如果为控制台程序，则返回“”
 buildnode=GetBuildNode(evn);//获取编译机器标签
 
 /////// 编译构建（主要工作编译程序，生成镜像，将镜像推送到私有仓）
@@ -63,14 +63,6 @@ if(evn=='Production'){
 //////// end
 
 //////// 函数
-//获取应用端口
-def GetApplicationPoint(type){
-	if(type=='web'){
-		"${applcationpoint}";
-	}else{
-		"";
-	}
-}
 //获取编译机器标签
 def GetBuildNode(environmental){
 	if(environmental=='Development'){
