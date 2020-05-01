@@ -84,5 +84,5 @@ def DropContainer(){
 //²¿Êð
 def DeployApplication(){
 	DropContainer();
-    sh 'docker run --name ${applicationname} -p ${myapplcationpoint}:80 -d ${applicationname}'	
+    sh 'docker run --name ${applicationname} -p "${myapplcationpoint}":80 -d ${applicationname}'	
 }
