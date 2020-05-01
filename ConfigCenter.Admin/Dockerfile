@@ -1,4 +1,4 @@
-FROM hub.zhidianlife.com/common/netcore3.1-alpine
+FROM netcore3.1-alpine
 WORKDIR /app
 COPY bin/publish /app
 
