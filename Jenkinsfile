@@ -84,5 +84,5 @@ def DropContainer(){
 //²¿Êð
 def DeployApplication(){
 	DropContainer();
-    sh 'docker run --restart=always --network wulinet --network-alias configapi --name ${applicationname} -p ${applcationpoint}:80 -d ${applicationname}'	
+    sh 'docker run --restart=always --network wulinet --network-alias ${applicationname} --name ${applicationname} -p ${applcationpoint}:80 -d ${applicationname}'	
 }
