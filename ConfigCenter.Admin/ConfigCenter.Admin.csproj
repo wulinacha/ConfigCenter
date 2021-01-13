@@ -45,7 +45,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
     <PackageReference Include="MvcCorePager" Version="0.1.0" />
     <PackageReference Include="NPOI" Version="2.4.1" />
-    <PackageReference Include="ServiceStack" Version="5.8.0" />
+    <PackageReference Include="ServiceStack" Version="5.9.2" />
   </ItemGroup>
 
   <ItemGroup>
